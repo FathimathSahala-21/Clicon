@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLICON - E-commerce Store</title>
+    <link rel="stylesheet" href="./CLICON - E-commerce Store_files/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="./CLICON - E-commerce Store_files/all.min.css">
+    <link href="./CLICON - E-commerce Store_files/css2" rel="stylesheet">
+  </head>
+  <body>
+    <!-- ========== TOP BAR (Black Friday Banner) ========== -->
+    <div class="top-banner" id="topBanner">
+      <div class="banner-content">
+        <div class="banner-text">
+          <span class="black-text">Black</span>
+          <span class="white-text">Friday</span>
+        </div>
+        <div class="banner-offer">
+          Up to <span class="discount">59%</span> OFF
+        </div>
+        <button class="shop-now-btn">
+          SHOP NOW <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <button class="close-banner" onclick="closeBanner()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- ========== MIDDLE BAR (Main Header) ========== -->
+    <header class="main-header">
+      <div class="container">
+        <!-- Left: Welcome text & Social Icons -->
+        <div class="header-left">
+          <span class="welcome-text">Welcome to Clicon online eCommerce store.</span>
+          <div class="social-icons">
+            <span>Follow us:</span>
+            <a href="http://127.0.0.1:5500/index.html#"><i class="fab fa-twitter"></i></a>
+            <a href="http://127.0.0.1:5500/index.html#"><i class="fab fa-facebook"></i></a>
+            <a href="http://127.0.0.1:5500/index.html#"><i class="fab fa-pinterest"></i></a>
+            <a href="http://127.0.0.1:5500/index.html#"><i class="fab fa-reddit"></i></a>
+            <a href="http://127.0.0.1:5500/index.html#"><i class="fab fa-youtube"></i></a>
+            <a href="http://127.0.0.1:5500/index.html#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Right: Language & Currency -->
+        <div class="header-right">
+          <select class="lang-select">
+            <option>Eng</option>
+            <option>Spa</option>
+            <option>Fra</option>
+          </select>
+          <select class="currency-select">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>GBP</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== NAVIGATION BAR (Logo, Search, Icons) ========== -->
+    <nav class="main-nav">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <!-- <i class="fas fa-circle"></i> -->
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24ZM36 24C36 30.6274 30.6274 36 24 36C17.3726 36 12 30.6274 12 24C12 17.3726 17.3726 12 24 12C30.6274 12 36 17.3726 36 24ZM24 32C28.4183 32 32 28.4183 32 24C32 19.5817 28.4183 16 24 16C19.5817 16 16 19.5817 16 24C16 28.4183 19.5817 32 24 32Z" fill="white"></path>
+          </svg>
+
+          <span>CLICON</span>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search for anything...">
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- User Actions -->
+        <div class="nav-actions">
+          <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-cart-shopping"></i>
+            <span class="badge" id="cartCount">0</span>
+          </div>
+          <div class="wishlist-icon">
+            <i class="far fa-heart"></i>
+          </div>
+          <div class="user-icon">
+            <i class="far fa-user"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== BOTTOM NAVIGATION (Categories & Links) ========== -->
+    <div class="bottom-nav">
+      <div class="container">
+        <button class="category-dropdown">
+          <i class="fas fa-bars"></i>
+          All Category
+          <i class="fas fa-chevron-down"></i>
+        </button>
+
+        <div class="nav-links">
+          <a href="http://127.0.0.1:5500/index.html#" class="nav-link">
+            <i class="fas fa-map-marker-alt"></i>
+            Track Order
+          </a>
+          <a href="http://127.0.0.1:5500/index.html#" class="nav-link">
+            <i class="fas fa-sync"></i>
+            Compare
+          </a>
+          <a href="http://127.0.0.1:5500/index.html#" class="nav-link">
+            <i class="fas fa-headset"></i>
+            Customer Support
+          </a>
+          <a href="http://127.0.0.1:5500/index.html#" class="nav-link">
+            <i class="fas fa-info-circle"></i>
+            Need Help
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT AREA ========== -->
+    <main>
+      <!-- Best Deals Section with Timer -->
+      <section class="deals-section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>Best Deals</h2>
+              <div class="countdown-timer">
+                <span>Deals ends in</span>
+                <div class="timer">
+                  <span class="time-box" id="days">16d</span> :
+                  <span class="time-box" id="hours">21h</span> :
+                  <span class="time-box" id="minutes">56m</span> :
+                  <span class="time-box" id="seconds">13s</span>
+                </div>
+              </div>
+            </div>
+            <a href="http://127.0.0.1:5500/index.html#" class="browse-all">
+              Browse All Product <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="products-grid" id="productsGrid"><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail.webp" alt="Red Lipstick">
+    <h3>Red Lipstick...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(91)</span>
+    </div>
+    <p class="product-price">12.99</p>
+  </div><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(1).webp" alt="Decoration Swing">
+    <h3>Decoration Swing...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(47)</span>
+    </div>
+    <p class="product-price">59.99</p>
+  </div><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(2).webp" alt="Pan">
+    <h3>Pan...</h3>
+    <div class="product-rating">
+      <span class="stars">★★☆☆☆</span>
+      <span class="rating-count">(90)</span>
+    </div>
+    <p class="product-price">24.99</p>
+  </div><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(3).webp" alt="Sports Sneakers Off White Red">
+    <h3>Sports Sneakers Off White Red...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(62)</span>
+    </div>
+    <p class="product-price">109.99</p>
+  </div><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(4).webp" alt="Spice Rack">
+    <h3>Spice Rack...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(79)</span>
+    </div>
+    <p class="product-price">19.99</p>
+  </div><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(5).webp" alt="Grater Black">
+    <h3>Grater Black...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(84)</span>
+    </div>
+    <p class="product-price">10.99</p>
+  </div><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(6).webp" alt="Nike Air Jordan 1 Red And Black">
+    <h3>Nike Air Jordan 1 Red And Black...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(7)</span>
+    </div>
+    <p class="product-price">149.99</p>
+  </div><div class="product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(7).webp" alt="Carbon Steel Wok">
+    <h3>Carbon Steel Wok...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(40)</span>
+    </div>
+    <p class="product-price">29.99</p>
+  </div></div>
+        </div>
+      </section>
+
+      <!-- Category Section -->
+      <section class="category-section">
+        <div class="container" style="position: relative;">
+          <h2>Shop with Categorys</h2>
+          <div class="categories-slider" id="categoriesSlider"><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(8).webp" alt="Beauty" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>BEAUTY</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(9).webp" alt="Fragrances" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>FRAGRANCES</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(10).webp" alt="Furniture" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>FURNITURE</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(11).webp" alt="Groceries" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>GROCERIES</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(1).webp" alt="Home Decoration" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>HOME DECORATION</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(12).webp" alt="Kitchen Accessories" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>KITCHEN ACCESSORIES</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(13).webp" alt="Laptops" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>LAPTOPS</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(14).webp" alt="Mens Shirts" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>MENS SHIRTS</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(6).webp" alt="Mens Shoes" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>MENS SHOES</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(15).webp" alt="Mens Watches" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>MENS WATCHES</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(16).webp" alt="Mobile Accessories" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>MOBILE ACCESSORIES</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div><div class="category-card">
+      <div class="category-image">
+        <img src="./CLICON - E-commerce Store_files/thumbnail(17).webp" alt="Motorcycle" onerror="this.src=&#39;https://placehold.co/150x150/png&#39;">
+      </div>
+      <h3>MOTORCYCLE</h3>
+      <p style="font-size: 12px; color: #77878F; margin-top: 8px;">Shop Now →</p>
+    </div></div>
+        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button><button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button></div>
+      </section>
+    </main>
+
+    <!-- ========== CART SIDEBAR ========== -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Shopping Cart</h2>
+        <button class="close-cart" onclick="toggleCart()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems"><p style="text-align: center; padding: 40px; color: #999;">Your cart is empty</p></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="checkout-btn">
+          CHECKOUT <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== PRODUCT MODAL ========== -->
+    <div class="modal" id="productModal">
+      <div class="modal-overlay" onclick="closeModal()"></div>
+      <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img id="modalImage" src="./CLICON - E-commerce Store_files/thumbnail(6).webp" alt="">
+          </div>
+          <div class="modal-details">
+            <h2 id="modalName">Nike Air Jordan 1 Red And Black</h2>
+            <div class="modal-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(52,677)</span>
+            </div>
+            <p class="modal-price" id="modalPrice">$149.99</p>
+            <p class="modal-description" id="modalDescription">The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes.</p>
+
+            <div class="quantity-selector">
+              <label>Quantity:</label>
+              <div class="qty-controls">
+                <button onclick="changeQuantity(-1)">-</button>
+                <input type="number" id="modalQuantity" value="1" min="1">
+                <button onclick="changeQuantity(1)">+</button>
+              </div>
+            </div>
+
+            <div class="modal-actions">
+              <button class="add-to-cart-btn" onclick="addToCart()">
+                ADD TO CART
+              </button>
+              <button class="wishlist-btn">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 20px; padding: 40px 20px; background: rgb(245, 245, 245); margin: 20px 0px; overflow-x: auto;"><div style="min-width: 280px; flex-shrink: 0;"><h2>Top Rated</h2><div style="display: flex; flex-direction: column; gap: 20px;"><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(18).webp" alt="House Showpiece Plant">
+    <h3>House Showpiece Plant...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(28)</span>
+    </div>
+    <p class="product-price">39.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(19).webp" alt="Citrus Squeezer Yellow">
+    <h3>Citrus Squeezer Yellow...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(22)</span>
+    </div>
+    <p class="product-price">8.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(3).webp" alt="Sports Sneakers Off White Red">
+    <h3>Sports Sneakers Off White Red...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(62)</span>
+    </div>
+    <p class="product-price">109.99</p>
+  </div></div></div><div style="min-width: 280px; flex-shrink: 0;"><h2>New Arrivals</h2><div style="display: flex; flex-direction: column; gap: 20px;"><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(20).webp" alt="Cooking Oil">
+    <h3>Cooking Oil...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(10)</span>
+    </div>
+    <p class="product-price">4.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(21).webp" alt="Fork">
+    <h3>Fork...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(7)</span>
+    </div>
+    <p class="product-price">3.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(5).webp" alt="Grater Black">
+    <h3>Grater Black...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(84)</span>
+    </div>
+    <p class="product-price">10.99</p>
+  </div></div></div><div style="min-width: 280px; flex-shrink: 0;"><h2>Best Sellers</h2><div style="display: flex; flex-direction: column; gap: 20px;"><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(22).webp" alt="Fish Steak">
+    <h3>Fish Steak...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(74)</span>
+    </div>
+    <p class="product-price">14.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(8).webp" alt="Essence Mascara Lash Princess">
+    <h3>Essence Mascara Lash Princess...</h3>
+    <div class="product-rating">
+      <span class="stars">★★☆☆☆</span>
+      <span class="rating-count">(99)</span>
+    </div>
+    <p class="product-price">9.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(23).webp" alt="Longines Master Collection">
+    <h3>Longines Master Collection...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(100)</span>
+    </div>
+    <p class="product-price">1499.99</p>
+  </div></div></div><div style="min-width: 280px; flex-shrink: 0;"><h2>Flash Sale Today</h2><div style="display: flex; flex-direction: column; gap: 20px;"><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(24).webp" alt="Spoon">
+    <h3>Spoon...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★★☆</span>
+      <span class="rating-count">(59)</span>
+    </div>
+    <p class="product-price">4.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(25).webp" alt="Man Plaid Shirt">
+    <h3>Man Plaid Shirt...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(82)</span>
+    </div>
+    <p class="product-price">34.99</p>
+  </div><div class="product-card classification-product-card">
+    <img src="./CLICON - E-commerce Store_files/thumbnail(21).webp" alt="Fork">
+    <h3>Fork...</h3>
+    <div class="product-rating">
+      <span class="stars">★★★☆☆</span>
+      <span class="rating-count">(7)</span>
+    </div>
+    <p class="product-price">3.99</p>
+  </div></div></div></div><section id="topRated" style="text-align: center; display: none;"></section>
+    <section id="newArrivals" style="text-align: center; display: none;"></section>
+    <section id="bestSellers" style="text-align: center; display: none;"></section>
+    <section id="flashSale" style="text-align: center; display: none;"></section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>CLICON</h3>
+            <p>Email: info@store.com</p>
+            <p>Phone: (123) 456-7890</p>
+          </div>
+          <div class="footer-section">
+            <h3>TOP CATEGORY</h3>
+            <p>Your one-stop shop for quality products.</p>
+          </div>
+          <div class="footer-section">
+            <h3>QUICK LINKS</h3>
+            <a href="http://127.0.0.1:5500/index.html#">Shop Product</a>
+            <a href="http://127.0.0.1:5500/index.html#">Shopping Cart</a>
+            <a href="http://127.0.0.1:5500/index.html#">Wishlist</a>
+            <a href="http://127.0.0.1:5500/index.html#">Compare</a>
+            <a href="http://127.0.0.1:5500/index.html#">Track Order</a>
+            <a href="http://127.0.0.1:5500/index.html#">Customer Help</a>
+            <a href="http://127.0.0.1:5500/index.html#">About Us</a>
+          </div>
+          <div class="footer-section">
+            <h3>DOWNLOAD APP</h3>
+            <p>Email: info@store.com</p>
+            <p>Phone: (123) 456-7890</p>
+          </div>
+          <div class="footer-section">
+            <h3>POPULAR TAG</h3>
+            <p>Email: info@store.com</p>
+            <p>Phone: (123) 456-7890</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © Kinbo - eCommerce Template © 2021. Design by Templatecookie.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./CLICON - E-commerce Store_files/script.js"></script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
